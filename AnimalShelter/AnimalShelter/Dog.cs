@@ -8,21 +8,20 @@ namespace AnimalShelter
 {
     class Dog : Animal
     {
-        private DateTime timeOfLastWalk;
+        private DateTime _timeOfLastWalk;
 
         public DateTime TimeOfLastWalk
         {
-            get { return timeOfLastWalk; }
+            get { return _timeOfLastWalk; }
         }
 
         public Dog(string name, DateTime birthDate, Owner owner):base(name, birthDate, owner)
         {
-
         }
 
-        public void changeDateOfLastWalk(DateTime date)
+        public void ChangeDateOfLastWalk(DateTime date)
         {
-            timeOfLastWalk = date;
+            _timeOfLastWalk = date;
         }
     }
 }

@@ -17,7 +17,7 @@ namespace AnimalShelter
 
         public Cat(string name, DateTime birthDate, Owner owner): base(name, birthDate, owner)
         {
-
+            _habits = new List<string>();
         }
 
         public void AddHabit(string habit)
