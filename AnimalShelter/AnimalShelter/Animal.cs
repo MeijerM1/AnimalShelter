@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace AnimalShelter
 {
-    abstract class Animal
+    public abstract class Animal
     {
         // Fields
         private string _name;
-        private DateTime _birthDate;
+        private DateTime _birthDate = new DateTime();
         private Owner _owner;
         private bool _isReserved;
         private decimal _price;
@@ -44,11 +44,11 @@ namespace AnimalShelter
         }
 
         // Constructors
-        public Animal(string name, DateTime birthDate, Owner owner)
+        public Animal(string name, DateTime birthDate)
         {
             this._name = name;
             this._birthDate = birthDate;
-            this._owner = owner;
+            _isReserved = false;
         }
 
         public void ChangeOwner(Owner owner)
@@ -56,9 +56,14 @@ namespace AnimalShelter
             this._owner = owner;
         }
 
-        public void ChangeReservation()
+        public void ChangeReservation(bool status)
         {
-            //TODO
+            _isReserved = status;
+        }
+
+        public void ChangePrice(decimal price)
+        {
+            _price = price;
         }
     }
 }

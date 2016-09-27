@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AnimalShelter
 {
-    class Dog : Animal
+    public class Dog : Animal
     {
         private DateTime _timeOfLastWalk;
 
@@ -15,13 +15,20 @@ namespace AnimalShelter
             get { return _timeOfLastWalk; }
         }
 
-        public Dog(string name, DateTime birthDate, Owner owner):base(name, birthDate, owner)
+        public Dog(string name, DateTime birthDate):base(name, birthDate)
         {
+            _timeOfLastWalk = new DateTime();
+            _timeOfLastWalk = DateTime.Today;
         }
 
         public void ChangeDateOfLastWalk(DateTime date)
         {
             _timeOfLastWalk = date;
+        }
+
+        public override string ToString()
+        {
+            return "Dog";
         }
     }
 }

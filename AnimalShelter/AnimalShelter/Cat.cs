@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AnimalShelter
 {
-    class Cat : Animal
+    public class Cat : Animal
     {
         private List<string> _habits;
 
@@ -15,7 +15,7 @@ namespace AnimalShelter
             get { return _habits; }
         }
 
-        public Cat(string name, DateTime birthDate, Owner owner): base(name, birthDate, owner)
+        public Cat(string name, DateTime birthDate): base(name, birthDate)
         {
             _habits = new List<string>();
         }
@@ -27,7 +27,15 @@ namespace AnimalShelter
 
         public void RemoveHabit(string habit)
         {
-            // TODO
+            if (_habits.Contains(habit))
+            {
+                Habits.Remove(habit);
+            }
+        }
+
+        public override string ToString()
+        {
+            return "Cat";
         }
     }
 }

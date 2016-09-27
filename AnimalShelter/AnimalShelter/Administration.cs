@@ -6,9 +6,43 @@ using System.Threading.Tasks;
 
 namespace AnimalShelter
 {
-    class Administration
+    public class Administration
     {
-        public List<Cat> Cats = new List<Cat>() { get; set;}
-        
+        public List<Cat> Cats { get; set; }
+        public List<Dog> Dogs { get; set; }
+        public List<Owner> Owners { get; set; }
+
+        public Administration()
+        {
+            Cats = new List<Cat>();
+            Dogs = new List<Dog>();
+            Owners = new List<Owner>();
+        }
+
+
+        public void AddCat(Cat cat)
+        {
+            Cats.Add(cat);
+        }
+
+        public void AddDog(Dog dog)
+        {
+            Dogs.Add(dog);
+        }
+
+        public void AddOwner(Owner owner)
+        {
+            Owners.Add(owner);
+        }
+
+        public void RemoveCat(Cat cat)
+        {
+            Cats.Remove(cat);
+        }
+
+        public void RemoveDog(Dog dog)
+        {
+            Dogs.Remove(dog);
+        }
     }
 }
